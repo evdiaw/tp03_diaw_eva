@@ -1,25 +1,24 @@
 import { Injectable } from '@angular/core';
+import { Client } from './core/Client';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
 
+  clientsList: Array<Client> = [];
+
   constructor() { }
 
-  postClient(): void {
-    console.log("postClient activé");
+  postClient(c: Client): void {
+    this.clientsList.push(c);
   }
 
-  getClient(): void {
-    console.log("getClient activé");
+  getClient(): Array<Client> {
+    return this.clientsList;
   }
 
   postLogin(): void {
     console.log("postLogin activé");
-  }
-
-  getCatalogue(): void {
-    console.log("getCatalogue activé");
   }
 }

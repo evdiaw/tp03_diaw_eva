@@ -1,0 +1,17 @@
+<div class="c1">
+    <p>Catalogue des produits</p>
+
+    <select id="filtre">
+        <option></option>
+        <option>title</option>
+        <option>price</option>
+    </select>
+    <div *ngFor="let produit of tabProduits">
+        <ul>
+            <li>{{ produit.title }} - {{ produit.price }} €</li>
+        </ul>
+
+    </div>
+
+</div>
+

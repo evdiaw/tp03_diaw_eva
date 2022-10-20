@@ -8,6 +8,8 @@ import { Comp2Component } from './comp2/comp2.component';
 import { OnlyLettersDirective } from './only-letters.directive';
 import { OnlyNumbersDirective } from './only-numbers.directive';
 import { TelephonePipe } from './telephone.pipe';
+import { CompCatalogueComponent } from './comp-catalogue/comp-catalogue.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { TelephonePipe } from './telephone.pipe';
     Comp2Component,
     OnlyLettersDirective,
     OnlyNumbersDirective,
-    TelephonePipe
+    TelephonePipe,
+    CompCatalogueComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
