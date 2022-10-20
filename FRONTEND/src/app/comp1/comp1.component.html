@@ -2,61 +2,52 @@
 
     <div>
         <label for="civilite">Civilité : </label>
-        <select [(ngModel)]="civilite">
+        <select [(ngModel)]="client.civilite">
             <option value="mme">Madame</option>
             <option value="mr">Monsieur</option>
             <option value="autre">Autre</option>
         </select>
         
         <label for="prenom">Prenom : </label>
-        <input appOnlyLetters [(ngModel)]="prenom"/>
+        <input appOnlyLetters [(ngModel)]="client.prenom"/>
     
         <label for="nom">Nom : </label>
-        <input appOnlyLetters [(ngModel)]="nom"/>
+        <input appOnlyLetters [(ngModel)]="client.nom"/>
     </div>
 
     <div>     
         <label for="adresse">Adresse : </label>
-        <input [(ngModel)]="adresse"/>
+        <input [(ngModel)]="client.adresse"/>
 
         <label for="code_postal">Code postal : </label>
-        <input appOnlyNumbers maxSize ="4" [(ngModel)]="code_postal"/>
+        <input appOnlyNumbers maxSize ="4" [(ngModel)]="client.code_postal"/>
     
         <label for="ville">Ville : </label>
-        <input appOnlyLetters [(ngModel)]="ville"/>
+        <input appOnlyLetters [(ngModel)]="client.ville"/>
     </div>
 
     <div>     
         <label for="telephone">telephone : </label>
-        <input appOnlyNumbers maxSize ="9" [(ngModel)]="telephone"/>
+        <input appOnlyNumbers maxSize ="9" [(ngModel)]="client.telephone"/>
 
         <label for="email">Email : </label>
-        <input [(ngModel)]="email"/>
+        <input [(ngModel)]="client.email"/>
     </div>
 
     <div>     
         <label for="login">Login : </label>
-        <input [(ngModel)]="login"/>
+        <input [(ngModel)]="client.login"/>
 
         <label for="password">Mot de passe : </label>
-        <input [(ngModel)]="password"/>
+        <input [(ngModel)]="client.password"/>
 
         <label for="password_conf">Confirmation du mot de passe : </label>
-        <input [(ngModel)]="password_conf"/>
+        <input [(ngModel)]="client.password_conf"/>
     </div>
-    
-    <app-comp2 
-    [prenom]="prenom" 
-    [nom]="nom" 
-    [adresse]="adresse" 
-    [code_postal]="code_postal"
-    [ville]="ville"
-    [telephone]="telephone"
-    [email]="email"
-    [login]="login" 
-    (change)="clicChange($event)"></app-comp2>
 
-    <br/> <br/>
-    {{bonjour}}
+    <button type="submit">Envoyer</button>
+    
+    <br>
+    <app-comp2 [client]="client"></app-comp2>
 
 </div>

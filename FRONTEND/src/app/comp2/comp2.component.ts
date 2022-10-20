@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Client } from '../core/Client';
 
 @Component({
   selector: 'app-comp2',
@@ -8,30 +9,16 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class Comp2Component implements OnInit {
 
   constructor() { }
-  @Input() prenom : String = ""; 
-  @Input() nom : String = ""; 
-  @Input() civilite : String = ""; 
-  @Input() adresse : String = ""; 
-  @Input() code_postal : String = ""; 
-  @Input() ville : String = ""; 
-  @Input() telephone : String = ""; 
-  @Input() email : String = ""; 
-  @Input() login : String = ""; 
-  @Output() change: EventEmitter<String> = new EventEmitter<String>();
-
-  
-
-  bonjour: String= "";
-  recap_adresse: String= "";
-  recap_telephone: String= "";
+  @Input() client = new Client();
+  @Output() change: EventEmitter<Client> = new EventEmitter<Client>();
 
 
   ngOnInit(): void {
   }
 
-  clic () {
-    this.change.emit( 'Bonjour ' + this.prenom + ' ' + this.nom + ' alias ' + this.login + '. Votre addresse : ' + this.adresse + ' ' + this.code_postal
-    + ' ' + this.ville + ". Email : " + this.email + '. Telephone : ' + this.telephone);
-  }
+  // clic () {
+  //   this.change.emit( 'Bonjour ' + this.client.prenom + ' ' + this.client.nom + ' alias ' + this.client.login + '. Votre addresse : ' + this.client.adresse + ' ' + this.client.code_postal
+  //   + ' ' + this.client.ville + ". Email : " + this.client.email + '. Telephone : ' + this.client.telephone);
+  // }
 
 }

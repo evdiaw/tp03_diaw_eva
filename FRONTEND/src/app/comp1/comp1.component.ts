@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientService } from '../client.service';
+import { Client } from '../core/Client';
 
 @Component({
   selector: 'app-comp1',
@@ -7,21 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Comp1Component implements OnInit {
 
-  constructor() { }
+  constructor(public clientService: ClientService) { }
 
-  prenom: String = "";
-  nom: String = "";
-  civilite: String = "";
-  adresse: String = ""
-  code_postal: String = "";
-  ville: String = "";
-  telephone: String = "";
-  email: String = ""
-  login: String = "";
-  password: String = "";
-  password_conf: String = "";
-  bonjour : String = "";
-  //client: Object = {};
+  client: Client = new Client();
   
 
   ngOnInit(): void {
@@ -29,11 +19,6 @@ export class Comp1Component implements OnInit {
 
   clic(): void {
     console.log("clic activé");
-  }
-
-  clicChange (val : String) {
-
-    this.bonjour = val;
   }
 
 }
