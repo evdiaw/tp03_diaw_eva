@@ -24,7 +24,7 @@ export class CompCatalogueComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    //this.tabProduits.unsubscribe();
+    //this.catalogueService.getCatalogue().unsubscribe();
   }
 
   onChange(event: any) {
