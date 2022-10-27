@@ -1,5 +1,6 @@
 export interface Catalogue {
-    title: string;
-    price: number;
+    color: string;
+    type: string;
+    id: number;
   }
   

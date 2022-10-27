@@ -4,14 +4,18 @@
     <label for="filtre">Filtrer par</label>
     <select [(ngModel)]="filtre" (change)="onChange($event)">
         <option value=""></option>
-        <option value="nom">nom</option>
-        <option value="prix">prix</option>
+        <option value="color">Couleur</option>
+        <option value="type">Type</option>
     </select>
+
+    <app-search-bar [categorie]="'type'" [listeFiltree]="tabProduits" (filterResult)="updateCatalogue($event)"
+        (filterReset)="getCatalogue()">
+    </app-search-bar>
+
     <div *ngFor="let produit of tabProduits">
         <ul>
-            <li>{{ produit.title }} - {{ produit.price }} €</li>
+            <li>{{ produit.color }} {{ produit.type }} </li>
         </ul>
-
     </div>
 
 </div>
