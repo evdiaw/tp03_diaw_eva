@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CatalogueService } from '../catalogue.service';
 import { Catalogue } from '../core/Catalogue';
 
@@ -11,6 +11,7 @@ export class CompCatalogueComponent implements OnInit {
 
   constructor(private catalogueService: CatalogueService) { }
 
+  @Input() filtre: string = '';
   tabProduits: Array<Catalogue> = [];
 
   ngOnInit(): void {
@@ -25,5 +26,18 @@ export class CompCatalogueComponent implements OnInit {
   ngOnDestroy(): void {
     //this.tabProduits.unsubscribe();
   }
+
+  onChange(event: any) {
+    switch(event.target.value) {
+      case 'prix':
+        this.tabProduits.sort((a, b) => a.price - b.price);
+        break;
+      case 'nom':
+        this.tabProduits.sort((a, b) => a.title.localeCompare(b.title));
+        break;
+      default:
+        break;
+    }
+  } 
 
 }

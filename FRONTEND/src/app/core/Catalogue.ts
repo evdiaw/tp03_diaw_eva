@@ -1,5 +1,5 @@
 export interface Catalogue {
-    title: String;
+    title: string;
     price: number;
   }
   

@@ -1,10 +1,11 @@
 <div class="c1">
-    <p>Catalogue des produits</p>
+    <h1>Catalogue des produits</h1>
 
-    <select id="filtre">
-        <option></option>
-        <option>title</option>
-        <option>price</option>
+    <label for="filtre">Filtrer par</label>
+    <select [(ngModel)]="filtre" (change)="onChange($event)">
+        <option value=""></option>
+        <option value="nom">nom</option>
+        <option value="prix">prix</option>
     </select>
     <div *ngFor="let produit of tabProduits">
         <ul>

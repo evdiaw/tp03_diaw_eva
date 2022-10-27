@@ -10,6 +10,7 @@ import { OnlyNumbersDirective } from './only-numbers.directive';
 import { TelephonePipe } from './telephone.pipe';
 import { CompCatalogueComponent } from './comp-catalogue/comp-catalogue.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
